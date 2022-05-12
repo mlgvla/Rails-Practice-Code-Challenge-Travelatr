@@ -1,0 +1,22 @@
+<h2><%= @blogger.name %></h2>
+
+
+<p>
+Bio:
+<%= @blogger.bio %>
+</p>
+
+<p>
+Age: <%= @blogger.age %> 
+</p>
+
+<p>
+<%= link_to 'Featured Post', post_path(@blogger.featured_post) %>
+</p> 
+
+Top Destinations:
+<ul>
+    <% @blogger.most_written_about_destinations.each do |destination| %>
+      <li><%= destination.name %>, <%= destination.country %>
+    <% end %>
+</ul>
